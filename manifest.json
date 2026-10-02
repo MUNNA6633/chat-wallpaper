@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Chat Wallpaper",
+  "version": "2.0.0",
+  "description": "Image or video wallpaper behind ChatGPT, Gemini, Claude and other AI chats, with dim, blur and speed controls.",
+  "minimum_chrome_version": "110",
+  "permissions": ["storage", "unlimitedStorage"],
+  "action": {
+    "default_title": "Chat Wallpaper",
+    "default_popup": "app.html",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://gemini.google.com/*",
+        "https://claude.ai/*",
+        "https://copilot.microsoft.com/*",
+        "https://www.perplexity.ai/*",
+        "https://chat.deepseek.com/*",
+        "https://grok.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["wallpaper.html", "wallpaper.css", "wallpaper.js"],
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://gemini.google.com/*",
+        "https://claude.ai/*",
+        "https://copilot.microsoft.com/*",
+        "https://www.perplexity.ai/*",
+        "https://chat.deepseek.com/*",
+        "https://grok.com/*"
+      ]
+    }
+  ]
+}

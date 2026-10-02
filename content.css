@@ -1,0 +1,9 @@
+html.cw-on:not(#_),
+html.cw-on:not(#_) body:not(#_) {
+  background: transparent !important;
+  background-image: none !important;
+}
+[data-cw-clear]:not(#_) {
+  background-color: transparent !important;
+  background-image: none !important;
+}

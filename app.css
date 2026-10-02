@@ -1,0 +1,26 @@
+:root { --bg:#fff; --fg:#1f2328; --muted:#6b7280; --card:#f3f4f6; --accent:#10a37f; --err:#d92d20; }
+@media (prefers-color-scheme: dark) { :root { --bg:#1b1c1f; --fg:#e8eaed; --muted:#9aa0a6; --card:#2a2c31; } }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { width: 340px; margin: 0; padding: 14px; font: 13px system-ui, sans-serif; background: var(--bg); color: var(--fg); }
+body.tab { width: auto; max-width: 420px; margin: 32px auto; }
+header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+h1 { font-size: 15px; margin: 0; }
+a { color: var(--accent); font-size: 12px; text-decoration: none; }
+.drop { position: relative; height: 120px; border: 2px dashed var(--muted); border-radius: 10px; overflow: hidden;
+        display: flex; align-items: flex-end; cursor: pointer; background: var(--card); }
+.drop.over { border-color: var(--accent); }
+.thumb { position: absolute; inset: 0; background: center / cover no-repeat; }
+#dropText { position: relative; width: 100%; padding: 6px 10px; background: rgba(0,0,0,.55); color: #fff; font-size: 12px;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.status { min-height: 16px; margin: 6px 0; font-size: 12px; color: var(--muted); }
+.status.err { color: var(--err); }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 9px 0; }
+.row > span { width: 62px; flex: none; }
+.row input[type=range] { flex: 1; accent-color: var(--accent); }
+.row output { width: 46px; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+select { flex: 1; padding: 5px; border-radius: 6px; border: 1px solid var(--muted); background: var(--bg); color: var(--fg); }
+.actions { display: flex; gap: 8px; margin-top: 14px; }
+button { flex: 1; padding: 8px 10px; border: 0; border-radius: 7px; cursor: pointer; background: var(--accent); color: #fff; font: inherit; }
+button.ghost { background: var(--card); color: var(--fg); }
+.hint { color: var(--muted); font-size: 11px; line-height: 1.45; margin: 12px 0 0; }

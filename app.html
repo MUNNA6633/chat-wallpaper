@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chat Wallpaper</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <header>
+    <h1>Chat Wallpaper</h1>
+    <a id="openTab" href="#">Open in tab</a>
+  </header>
+
+  <div id="drop" class="drop" tabindex="0">
+    <div id="thumb" class="thumb"></div>
+    <span id="dropText">Click or drop an image / video</span>
+  </div>
+  <input type="file" id="file" accept="image/*,video/mp4,video/webm" hidden>
+  <p id="status" class="status"></p>
+
+  <label class="row"><span>Enabled</span><input type="checkbox" id="enabled"></label>
+  <label class="row" data-video-only><span>Play video</span><input type="checkbox" id="play"></label>
+
+  <label class="row"><span>Mode</span>
+    <select id="mode">
+      <option value="behind">Behind chat (best look)</option>
+      <option value="overlay">Overlay (works everywhere)</option>
+    </select>
+  </label>
+
+  <label class="row"><span>Fit</span>
+    <select id="fit">
+      <option value="cover">Cover</option>
+      <option value="contain">Contain</option>
+      <option value="fill">Stretch</option>
+      <option value="tile">Tile (images)</option>
+    </select>
+  </label>
+
+  <div class="row"><span>Opacity</span><input type="range" id="opacity" min="5" max="100"><output id="opacityV"></output></div>
+  <div class="row"><span>Dim</span><input type="range" id="dim" min="0" max="90"><output id="dimV"></output></div>
+  <div class="row"><span>Blur</span><input type="range" id="blur" min="0" max="30"><output id="blurV"></output></div>
+  <div class="row" data-video-only><span>Speed</span><input type="range" id="speed" min="25" max="200"><output id="speedV"></output></div>
+
+  <div class="actions">
+    <button id="remove" class="ghost">Remove</button>
+    <button id="choose">Choose file…</button>
+  </div>
+  <p class="hint">Videos: MP4 or WebM, under 20 MB (a 10–15 s 720p loop is ideal). Reload open chat tabs after changing the file. If "Behind" looks wrong on a site, use "Overlay" and lower Opacity.</p>
+
+  <script src="app.js"></script>
+</body>
+</html>
